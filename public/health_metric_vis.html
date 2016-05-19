@@ -1,0 +1,6 @@
+<div ng-controller="KbnHealthMetricVisController" class="health-metric-vis">
+    <div class="health-metric-container" ng-repeat="metric in metrics">
+        <div>{{vis.params.title}}</div>
+        <div class="health-metric-value" ng-class="{'red': (!vis.params.invertScale && metric.value <= vis.params.redThreshold) || (vis.params.invertScale && metric.value >= vis.params.redThreshold), 'yellow': (!vis.params.invertScale && metric.value > vis.params.redThreshold && metric.value < vis.params.greenThreshold) || (vis.params.invertScale && metric.value < vis.params.redThreshold && metric.value > vis.params.greenThreshold), 'green': (!vis.params.invertScale && metric.value >= vis.params.greenThreshold) || (vis.params.invertScale && metric.value <= vis.params.greenThreshold) }" ng-style="{'font-size': vis.params.fontSize+'pt'}">{{metric.value}}</div>
+    </div>
+</div>
