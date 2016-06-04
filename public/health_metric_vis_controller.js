@@ -19,11 +19,12 @@ define(function (require) {
           const fieldFormatter = table.aggConfig(column).fieldFormatter();
           let value = table.rows[0][i];
 
-          value = isInvalid(value) ? '?' : fieldFormatter(value);
+          let formattedValue = isInvalid(value) ? '?' : fieldFormatter(value);
 
           metrics.push({
             label: column.title,
-            value: value
+            formattedValue: formattedValue,
+            rawValue: value
           });
         });
       });
