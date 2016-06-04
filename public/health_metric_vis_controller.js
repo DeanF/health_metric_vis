@@ -22,6 +22,7 @@ define(function (require) {
           value = isInvalid(value) ? '?' : fieldFormatter(value);
 
           metrics.push({
+            label: column.title,
             value: value
           });
         });
