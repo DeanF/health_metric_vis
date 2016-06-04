@@ -1,6 +1,6 @@
 @import (reference) "~ui/styles/mixins.less";
 
-.health-metric-vis {
+.health-metric-container {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -12,16 +12,6 @@
   .health-metric-value {
     font-weight: bold;
     .ellipsis();
-    
-    &.red {
-        color: red;
-    }
-    &.green {
-        color: green;
-    }
-    &.yellow {
-        color: yellow;
-    }
   }
 
   .health-metric-container {
