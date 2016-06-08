@@ -28,7 +28,10 @@ define(function (require) {
           fontSize: 60,
           invertScale: false,
           redThreshold: 0,
-          greenThreshold: 0 
+          greenThreshold: 0,
+          redColor: "#fd482f",
+          yellowColor: "#ffa500",
+          greenColor: "#6dc066"
         },
         editor: require('plugins/health_metric_vis/health_metric_vis_params.html')
       },
