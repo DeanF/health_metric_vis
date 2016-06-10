@@ -44,7 +44,7 @@ define(function (require) {
           const fieldFormatter = table.aggConfig(column).fieldFormatter();
           let value = table.rows[0][i];
           let formattedValue = isInvalid(value) ? '?' : fieldFormatter(value);
-          let color = getColor(value, vis.params);
+          let color = getColor(value, $scope.vis.params);
           
           metrics.push({
             label: column.title,
