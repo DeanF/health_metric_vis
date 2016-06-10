@@ -12,19 +12,44 @@ define(function (require) {
     function isInvalid(val) {
       return _.isUndefined(val) || _.isNull(val) || _.isNaN(val);
     }
+    
+    function getColor(val, visParams) {
+      if (!visParams.invertScale) {
+        if (val <= visParams.redThreshold) {
+          return visParams.redColor;
+        }
+        else if (val < visParams.greenThreshold) {
+          return visParams.yellowColor;
+        }
+        else {
+          return visParams.greenColor;
+        }
+      }
+      else {
+          if (val <= visParams.greenThreshold) {
+              return visParams.greenColor;
+          }
+          else if (val < visParams.redThreshold) {
+              return visParams.yellowColor;
+          }
+          else {
+              return visParams.redColor;
+          }
+      }
+    }
 
     $scope.processTableGroups = function (tableGroups) {
       tableGroups.tables.forEach(function (table) {
         table.columns.forEach(function (column, i) {
           const fieldFormatter = table.aggConfig(column).fieldFormatter();
           let value = table.rows[0][i];
-
           let formattedValue = isInvalid(value) ? '?' : fieldFormatter(value);
-
+          let color = getColor(value, vis.params);
+          
           metrics.push({
             label: column.title,
             formattedValue: formattedValue,
-            rawValue: value
+            color: color
           });
         });
       });
