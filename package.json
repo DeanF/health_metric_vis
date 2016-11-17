@@ -6,6 +6,6 @@
     },
     "author": "Dean Fenster <dean@deanf.me> (deanf.me)",
     "description": "Brings color to kibana health metrics",
-    "homepage": "https://github.com/DeanF/health_metric_vis"
-
+    "homepage": "https://github.com/DeanF/health_metric_vis",
+    "main": "index.js"
 }
