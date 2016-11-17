@@ -1,4 +1,11 @@
 {
     "name": "health_metric_vis",
-    "version": "5.0.0"
+    "version": "0.3.2",
+    "kibana": {
+      "version": "5.0.0"
+    },
+    "author": "Dean Fenster <dean@deanf.me> (deanf.me)",
+    "description": "Brings color to kibana health metrics",
+    "homepage": "https://github.com/DeanF/health_metric_vis"
+
 }
