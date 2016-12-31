@@ -1,5 +1,5 @@
 # Health Metric Visualization
-A metric-like visualization, that changes colors according to numbers.
+A metric-like visualization, that changes colors according to numbers. For more information: https://deanf.me/2016/06/10/kibana-the-way-you-want-it/
 
 ## Installation
 For Kibana 4:
