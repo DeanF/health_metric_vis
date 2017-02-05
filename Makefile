@@ -1,5 +1,3 @@
-VERSION="5.0.0"
-
 version:
 	mkdir -p kibana/health_metric_vis
 	cp -r docs public index.js package.json kibana/health_metric_vis
