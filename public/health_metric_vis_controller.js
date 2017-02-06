@@ -66,7 +66,7 @@ module.controller('KbnHealthMetricVisController', function ($scope, Private) {
   $scope.$watch('vis.params', function (val) {
     if ($scope.esResponse) {
       metrics.length = 0;
-      $scope.preocessTableGroups(tabifyAggResponse($scope.vis, $scope.esResponse));
+      $scope.processTableGroups(tabifyAggResponse($scope.vis, $scope.esResponse));
     }
   });
 });

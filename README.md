@@ -8,7 +8,7 @@ bin/kibana plugin -i health_metric_vis -u https://github.com/DeanF/health_metric
 ```
 For Kibana 5:
 ```bash
-kibana-plugin install https://github.com/DeanF/health_metric_vis/releases/download/v0.3.3/health_metric_vis-${KIBANA_VERSION}.zip
+kibana-plugin install https://github.com/DeanF/health_metric_vis/releases/download/v0.3.4/health_metric_vis-${KIBANA_VERSION}.zip
 ```
 
 
