@@ -55,18 +55,11 @@ module.controller('KbnHealthMetricVisController', function ($scope, Private) {
     });
   };
 
-  $scope.$watch('esResponse', function (resp) {
+  $scope.$watchMulti(['esResponse', 'vis.params'], function ([resp]) {
     if (resp) {
       metrics.length = 0;
       $scope.esResponse = resp;
       $scope.processTableGroups(tabifyAggResponse($scope.vis, resp));
-    }
-  });
-
-  $scope.$watch('vis.params', function (val) {
-    if ($scope.esResponse) {
-      metrics.length = 0;
-      $scope.processTableGroups(tabifyAggResponse($scope.vis, $scope.esResponse));
     }
   });
 });
