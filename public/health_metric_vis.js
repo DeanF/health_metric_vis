@@ -31,6 +31,7 @@ function HealthMetricVisProvider(Private) {
       },
       editor: require('plugins/health_metric_vis/health_metric_vis_params.html')
     },
+    implementsRenderComplete: true,
     schemas: new Schemas([
       {
         group: 'metrics',
