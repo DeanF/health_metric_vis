@@ -42,7 +42,7 @@ module.controller('KbnHealthMetricVisController', function ($scope, Private) {
     tableGroups.tables.forEach(function (table) {
       table.columns.forEach(function (column, i) {
         const fieldFormatter = table.aggConfig(column).fieldFormatter();
-        let value = table.rows[0][i];
+        let value = table.rows[0][i].value;
         let formattedValue = isInvalid(value) ? '?' : fieldFormatter(value);
         let color = getColor(value, $scope.vis.params);
         
@@ -55,14 +55,14 @@ module.controller('KbnHealthMetricVisController', function ($scope, Private) {
     });
   };
 
-  $scope.$watchMulti(['esResponse', 'vis.params'], function ([resp]) {
-    if (resp) {
+  $scope.$watchMulti(['esResponse', 'vis.params'], function () {
+    if ($scope.esResponse) {
       const options = {
         asAggConfigResults: true
       };
 
       metrics.length = 0;
-      $scope.processTableGroups(tabifyAggResponse($scope.vis, resp, options));
+      $scope.processTableGroups(tabifyAggResponse($scope.vis, $scope.esResponse, options));
       $element.trigger('renderComplete');
     }
   });
