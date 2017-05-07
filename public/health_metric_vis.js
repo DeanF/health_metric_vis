@@ -1,12 +1,14 @@
 import 'plugins/health_metric_vis/health_metric_vis.less';
 import 'plugins/health_metric_vis/health_metric_vis_controller';
+import VisVisTypeProvider from 'ui/vis/vis_type';
 import TemplateVisTypeTemplateVisTypeProvider from 'ui/template_vis_type/template_vis_type';
 import VisSchemasProvider from 'ui/vis/schemas';
-
+import image from './images/icon-colored-number.svg'
 
 require('ui/registry/vis_types').register(HealthMetricVisProvider);
 
 function HealthMetricVisProvider(Private) {
+  const VisType = Private(VisVisTypeProvider);
   const TemplateVisType = Private(TemplateVisTypeTemplateVisTypeProvider);
   const Schemas = Private(VisSchemasProvider);
 
@@ -16,8 +18,9 @@ function HealthMetricVisProvider(Private) {
     name: 'health-metric',
     title: 'Health Metric',
     description: 'A numeric health metric, can show a number and color it accordingly.',
-    icon: 'fa-calculator',
+    image,
     template: require('plugins/health_metric_vis/health_metric_vis.html'),
+    category: VisType.CATEGORY.DATA,
     params: {
       defaults: {
         handleNoResults: true,
@@ -39,6 +42,7 @@ function HealthMetricVisProvider(Private) {
         title: 'Metric',
         min: 1,
         max: 1,
+        aggFilter: ['!derivative'],
         defaults: [
           { type: 'count', schema: 'metric' }
         ]
