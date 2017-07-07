@@ -1,3 +1,5 @@
+# This plugin is no longer needed for kibana 5.5.0+
+
 # Health Metric Visualization
 A metric-like visualization, that changes colors according to numbers. For more information: https://deanf.me/2016/06/10/kibana-the-way-you-want-it/
 
